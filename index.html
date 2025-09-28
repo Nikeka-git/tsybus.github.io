@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Resume - Nikita Tsybus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="main-header">
+    <h1 class="logo">Nikita Tsybus</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-card">
+      <img src="pics/NTMe.jpg" alt="Nikita Tsybus" class="profile-pic">
+      <div class="hero-text">
+        <h2>Student of AITU</h2>
+        <p>2024–2027</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN: Portfolio layout (Grid) -->
+  <main class="portfolio-layout" role="main">
+
+    <!-- LEFT: Projects area -->
+    <section id="projects" class="projects">
+      <h2>My Projects</h2>
+
+      <!-- Card row (Flexbox inside) -->
+      <div class="card-row">
+        <article class="card">
+          <img src="pics/ThisSite.png" alt="Project 1">
+          <div class="card-body">
+            <h3>Project 1</h3>
+            <p>Site with simple frontend. Technologies: HTML, CSS.</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn">View</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="pics/algo.png" alt="Project 2">
+          <div class="card-body">
+            <h3>Project 2</h3>
+            <p>Fully-working alghorim writing & testing system. Technologies: Java.</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn">View</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="pics/renpy.jpg" alt="Project 3">
+          <div class="card-body">
+            <h3>Project 3</h3>
+            <p>Basic game focused on plot. Python, Renpy.</p>
+          </div>
+          <div class="card-actions">
+            <button class="btn">View</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Image gallery (grid) -->
+      <h2 style="margin-top: 2rem;">Gallery of my favorite cats</h2>
+      <section class="gallery" aria-label="Project gallery">
+        <figure><img src="pics/1.webp" alt=""><figcaption>1</figcaption></figure>
+        <figure><img src="pics/2.webp" alt=""><figcaption>2</figcaption></figure>
+        <figure><img src="pics/3.jpg" alt=""><figcaption>3</figcaption></figure>
+        <figure><img src="pics/4.jpg" alt=""><figcaption>4</figcaption></figure>
+        <figure><img src="pics/5.png" alt=""><figcaption>5</figcaption></figure>
+        <figure><img src="pics/6.jpg" alt=""><figcaption>6</figcaption></figure>
+        <figure><img src="pics/7.png" alt=""><figcaption>7</figcaption></figure>
+        <figure><img src="pics/8.jpg" alt=""><figcaption>8</figcaption></figure>
+        <figure><img src="pics/9.jpg" alt=""><figcaption>9</figcaption></figure>
+      </section>
+    </section>
+
+    
+    <aside class="sidebar" aria-label="Sidebar">
+      <section id="about" class="panel">
+        <h2>About me</h2>
+        <p>Student of Astana IT University, 2 course, interested in blockchain technologies and web dev.
+           Like to study interesting spheres, learn new things and solve difficult problems.</p>
+      </section>
+
+      <section id="skills" class="panel">
+        <h2>Skills</h2>
+        <ul>
+          <li>Mid level C++</li>
+          <li>HTML & CSS (low level)</li>
+          <li>SQL, PostgreSQL (basic)</li>
+        </ul>
+      </section>
+
+      <section id="achievements" class="panel">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Finalist of Eurasian Olympiad</li>
+          <li>Placed in several regional Olympiads</li>
+          <li>Russki Medvezhonok — 1st place</li>
+        </ul>
+      </section>
+
+      <section id="contact-mini" class="panel">
+        <h2>Contact</h2>
+        <form>
+          <label for="mini-email" class="sr-only">Email</label>
+          <input id="mini-email" type="email" placeholder="your@email.com" class="mini-input">
+          <button type="submit" class="btn full">Send</button>
+        </form>
+      </section>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Nikita Tsybus — Portfolio</p>
+  </footer>
+
+</body>
+</html>

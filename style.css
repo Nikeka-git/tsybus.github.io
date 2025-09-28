@@ -1,0 +1,322 @@
+/* ========== Base ========== */
+:root{
+  --primary:#6c5ce7;
+  --primary-2:#8e7ff7;
+  --accent:#fd79a8;
+  --muted:#f9f9f9;
+  --text:#2d3436;
+}
+
+*{box-sizing:border-box}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--muted);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Visually hidden for accessibility */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Headings */
+h1, h2 {
+  margin: 0 0 1rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 6px;
+  border-radius: 3px;
+}
+
+/* ========== Header (Flexbox) ========== */
+header#main-header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  background: transparent;
+  display: flex;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  background: transparent !important;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+  transition: 0.25s ease;
+  background: var(--primary-2);
+  color: white;
+  display: inline-block;
+  border: 2px solid #5a4dc7;
+}
+
+nav a:hover, nav a:focus {
+  background: var(--accent);
+  border-color: #e84393;
+}
+
+/* ========== Hero ========== */
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 2.2rem 1rem;
+  background: linear-gradient(135deg, var(--primary), #a29bfe);
+}
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 980px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  gap: 1.2rem;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero-text h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+.hero-text p { margin: 0; color: #636e72; }
+
+/* ========== Portfolio layout (Grid) ========== */
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  align-items: start;
+}
+
+/* Left projects column */
+.projects {
+  /* nothing special — uses inner components */
+}
+
+/* Right sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Generic panel inside sidebar */
+.panel {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+/* ========== Card Row (Flexbox) ========== */
+.card-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column; /* make height distribution easy */
+  overflow: hidden;
+  min-width: 240px;
+  max-width: 320px;
+  flex: 1 1 300px; /* grow/shrink for responsiveness */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* make image fixed height and cropping */
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display:block;
+}
+
+/* body grows to take remaining space so buttons stick to bottom */
+.card-body {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1 1 auto;
+}
+
+.card-actions {
+  padding: 0.9rem;
+  display: flex;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+/* Buttons */
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.full { width: 100%; }
+
+/* ========== Gallery (Grid) ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 0.75rem;
+}
+
+.gallery figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.gallery img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display:block;
+  transition: transform 0.3s ease;
+}
+
+.gallery figure:hover img { transform: scale(1.06); }
+
+.gallery figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 6px 8px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.5));
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* ========== Contact compact / full ========== */
+.mini-input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.contact-form-full {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+/* keep original form styles for full contact */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.submit-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 2rem 1rem 3rem;
+  border-radius: 8px;
+}
+
+/* ========== Utilities ========== */
+ul { padding-left: 1.2rem; margin: 0; }
+ul li { list-style: none; margin: 0.4rem 0; padding: 0.35rem 0.6rem; background: #eceaff; border-left: 4px solid var(--primary); border-radius: 6px; }
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+  .portfolio-layout { grid-template-columns: 1fr; padding: 0 1rem; }
+  .card-row { justify-content: center; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .hero-card { gap: 1rem; }
+}
+
+@media (max-width: 520px) {
+  nav ul { gap: 0.4rem; }
+  .gallery { grid-template-columns: 1fr; }
+  .profile-pic { width: 96px; height: 96px; }
+}
